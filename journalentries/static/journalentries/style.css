@@ -1,3 +1,43 @@
-p{
-    padding-right: 12em;
+body{
+    padding: 1em;
+    font-size: 12pt;
+    font-family: 'Arial';
+}
+
+#content{ padding: 1em;}
+
+#header {padding: 1em 1em 0em 1em;}
+#header > a {text-decoration: none;}
+#header > a:hover {text-decoration: underline;}
+
+/* entries on the main page */
+
+.entrywrapper{
+    box-shadow: -5px 0px 0px orange;
+    padding: 0em 1em 0em 1em;
+    margin: 1em 0em 1em 0em;
+    transition: all 0.3s ease;
+}
+
+.entrywrapper:hover{
+    /*box-shadow: -8px 0px 0px orange;*/
+    cursor: pointer;
+    scale: 100.5%;
+}
+
+/* search bar */
+
+#search input[type=text] {
+    margin-top: 8px;
+    margin-right: 16px;
+    border: none;
+    box-shadow: 0px 2px 0px lightgray;
+    font-size: 17px;
+    padding: 0.2em 0.2em 0.2em 0.2em;
+}
+
+#search input:focus{
+    outline: 0px;
+    box-shadow: 0px 2px 0px orange;
+    border: none;
 }

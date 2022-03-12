@@ -5,8 +5,15 @@
     <title>{% block title %}djournal{% endblock %}</title>
 </head>
 <body>
+    
+    <div id="header">
+        {% block header %}
+        <a href="/">&lt;&lt; home</a>
+        {% endblock %}
+    </div>
+    
     <div id="content">
-        {% block content %}{% endblock %}
+    {% block content %}{% endblock %}
     </div>
 </body>
 </html>

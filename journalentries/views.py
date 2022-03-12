@@ -5,10 +5,24 @@ from .models import Entry
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, world. You're at the journalentries index.")
+    found = Entry.objects.all()
+    entries = []
+    for e in found:
+        preview = e.entry_text.split("\n")[1]
+        temp_context = {
+            'date': e.entry_date,
+            'preview': preview if preview != "" else e.entry_text.split("\n")[2],
+            'title': e.entry_title,
+            }
+        entries.append(temp_context)
+    context = {'entries':entries}
+    return render(request, 'journalentries/index.html', context)
 
 def single_entry_view(request, date):
     found = Entry.objects.filter(entry_date=date).first()
+    context = {}
+    if not found:
+        return render(request, 'journalentries/404.html', context)
     #plist is a list of paragraphs
     plist = found.entry_text.split("\n")
     context = {

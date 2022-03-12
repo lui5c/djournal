@@ -1,0 +1,23 @@
+{% extends "journalentries/base.html" %}
+        
+{% block title %}journal{% endblock %}
+
+
+
+{% block header %}
+    <h1>djournal</h1>
+    <div id="search">
+        <input type="text" placeholder="search...">
+    </div>
+{% endblock %}
+    
+{%block content %}
+    {% for e in entries %}
+        <div class="entrywrapper" 
+        onclick="window.location.href='{{e.date.strip}}';">
+        <h3><a href="/{{e.date}}">{{ e.title }}</a></h3>
+        <h4>{{ e.date }}</h4>
+        <p>{{ e.preview }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
