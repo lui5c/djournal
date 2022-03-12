@@ -1,0 +1,7 @@
+entries/
+db.sqlite3
+*.pyc
+*.pot
+*.log
+__pycache__
+secret_key.txt
