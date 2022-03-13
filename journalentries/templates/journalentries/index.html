@@ -2,22 +2,35 @@
         
 {% block title %}journal{% endblock %}
 
-
-
 {% block header %}
     <h1>djournal</h1>
-    <div id="search">
-        <input type="text" placeholder="search...">
-    </div>
+    <!-- <div id="search">
+        <input id="searchbar" type="text" placeholder="search...">
+        <div id="results"></div>
+    </div> -->
+
 {% endblock %}
     
 {%block content %}
     {% for e in entries %}
         <div class="entrywrapper" 
         onclick="window.location.href='{{e.date.strip}}';">
-        <h3><a href="/{{e.date}}">{{ e.title }}</a></h3>
-        <h4>{{ e.date }}</h4>
-        <p>{{ e.preview }}</p>
+            <h3><a href="/{{e.date}}">{{ e.title }}</a></h3>
+            <h4>{{ e.date }}</h4>
+            {% for p in e.preview %}
+                <p>{{ p }}</p>
+            {% endfor%}
         </div>
     {% endfor %}
 {% endblock %}
+
+<!--
+
+was going to add search functionality, ended up going with ctrl-f.
+
+{% block scripts %}
+
+{% load static %}
+<script src="{% static 'journalentries/searchindex.js' %}"></script>
+{% endblock %}
+-->

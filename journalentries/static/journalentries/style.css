@@ -1,14 +1,24 @@
 body{
     padding: 1em;
-    font-size: 12pt;
+    font-size: 14pt;
     font-family: 'Arial';
+    line-height: 1.3em;
 }
+a {color: darkorange;}
+a:hover{color:#ffc261;}
 
 #content{ padding: 1em;}
 
 #header {padding: 1em 1em 0em 1em;}
-#header > a {text-decoration: none;}
-#header > a:hover {text-decoration: underline;}
+
+/* headers */
+#header{
+    position: sticky;
+    font-size: 0.9em;
+    top: -1em;
+    background-color: white;
+    border-bottom: 1px solid black;
+}
 
 /* entries on the main page */
 
@@ -16,14 +26,14 @@ body{
     box-shadow: -5px 0px 0px orange;
     padding: 0em 1em 0em 1em;
     margin: 1em 0em 1em 0em;
-    transition: all 0.3s ease;
 }
 
 .entrywrapper:hover{
     /*box-shadow: -8px 0px 0px orange;*/
+    box-shadow: -7px 0px 0px orange;
     cursor: pointer;
-    scale: 100.5%;
 }
+
 
 /* search bar */
 

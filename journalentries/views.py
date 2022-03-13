@@ -8,10 +8,9 @@ def index(request):
     found = Entry.objects.all()
     entries = []
     for e in found:
-        preview = e.entry_text.split("\n")[1]
         temp_context = {
             'date': e.entry_date,
-            'preview': preview if preview != "" else e.entry_text.split("\n")[2],
+            'preview': e.entry_text.split("\n"),
             'title': e.entry_title,
             }
         entries.append(temp_context)
